@@ -14,6 +14,12 @@
         app:layout_constraintTop_toTopOf="parent"
         android:textSize="50dp"
         android:text="nice"/>
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/name"
     
 
 </androidx.constraintlayout.widget.ConstraintLayout>

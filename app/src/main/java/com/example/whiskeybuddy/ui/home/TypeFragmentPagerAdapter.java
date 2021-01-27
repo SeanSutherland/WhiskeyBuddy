@@ -6,14 +6,19 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
+import com.example.whiskeybuddy.R;
+
 public class TypeFragmentPagerAdapter extends FragmentPagerAdapter {
-    private String[] TYPES = {"Scotch", "Bourbon", "Canadian", "Irish"};
+    private String[] TYPES = {};
+    private int number_of_types;
 
     private Context mContext;
 
     public TypeFragmentPagerAdapter(Context context, FragmentManager fm) {
         super(fm);
         mContext = context;
+        TYPES = mContext.getResources().getStringArray(R.array.whiskey_types);
+        number_of_types = TYPES.length;
     }
 
     // This determines the fragment for each tab
@@ -25,7 +30,7 @@ public class TypeFragmentPagerAdapter extends FragmentPagerAdapter {
     // This determines the number of tabs
     @Override
     public int getCount() {
-        return 4;
+        return number_of_types;
     }
 
     // This determines the title for each tab
