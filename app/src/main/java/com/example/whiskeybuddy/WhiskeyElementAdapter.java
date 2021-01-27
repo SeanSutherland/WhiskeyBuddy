@@ -1,8 +1,6 @@
 package com.example.whiskeybuddy;
 
 import android.app.Activity;
-import android.content.Context;
-import android.media.Rating;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,32 +8,38 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+
+import com.example.whiskeybuddy.storage.Whiskey;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import kotlinx.coroutines.selects.WhileSelectKt;
-
-public class WhiskeyElementAdapter extends ArrayAdapter<WhiskeyElement> {
+public class WhiskeyElementAdapter extends ArrayAdapter<Whiskey> {
     private final Activity context;
-    private ArrayList<WhiskeyElement> list;
+    private ArrayList<Whiskey> list;
 
-    public WhiskeyElementAdapter(@NonNull Activity context, int resource, @NonNull List<WhiskeyElement> objects) {
-        super(context, R.layout.whiskey_element);
+    public WhiskeyElementAdapter(@NonNull Activity context, int resource, @NonNull List<Whiskey> objects) {
+        super(context, R.layout.whiskey_element, objects);
 
         this.context = context;
-        this.list = (ArrayList<WhiskeyElement>) objects;
+        this.list = (ArrayList<Whiskey>) objects;
     }
 
     public View getView(int position, View view, ViewGroup parent) {
-        LayoutInflater inflater=context.getLayoutInflater();
-        View rowView = inflater.inflate(R.layout.whiskey_element, null,true);
+        if (view == null) {
+            LayoutInflater inflater=context.getLayoutInflater();
+            view = inflater.inflate(R.layout.whiskey_element, parent,false);
+        }
+        System.out.println("Test*" + position);
 
-        TextView name = (TextView) rowView.findViewById(R.id.name);
-        ImageView image = (ImageView) rowView.findViewById(R.id.image);
-        RatingBar rating = (RatingBar) rowView.findViewById(R.id.rating);
+        TextView name = (TextView) view.findViewById(R.id.name);
+        //ImageView image = (ImageView) rowView.findViewById(R.id.image);
+        RatingBar rating = (RatingBar) view.findViewById(R.id.rating);
 
         name.setText(list.get(position).getName());
         //image.setImageBitmap(list.get(position).getImage());
@@ -43,6 +47,8 @@ public class WhiskeyElementAdapter extends ArrayAdapter<WhiskeyElement> {
 
 
 
-        return rowView;
+        return view;
     }
+
+
 }

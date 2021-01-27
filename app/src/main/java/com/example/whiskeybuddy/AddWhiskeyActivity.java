@@ -9,6 +9,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.whiskeybuddy.storage.Whiskey;
+
 public class AddWhiskeyActivity extends AppCompatActivity {
 
     EditText age;
@@ -75,6 +77,9 @@ public class AddWhiskeyActivity extends AppCompatActivity {
         }
 
         System.out.println("Name : " + whiskey_name + ", Type : " + whiskey_type + ", Age : " + whiskey_age + ", Price : " + whiskey_price);
+        Whiskey whiskey = new Whiskey(whiskey_name, 0, whiskey_type);
+
+        MainActivity.getDatabase().whiskeyDao().addWhiskey(whiskey);
 
         super.onBackPressed();
         //write to database
