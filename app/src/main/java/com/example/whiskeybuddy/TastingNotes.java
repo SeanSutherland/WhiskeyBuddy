@@ -8,10 +8,10 @@ public class TastingNotes {
     private String palate;
     private String finish;
     private String extraNotes;
-    private Date date;
+    private String date;
 
 
-    public TastingNotes(String nose, String palate, String finish, Date date, String extraNotes) {
+    public TastingNotes(String nose, String palate, String finish, String date, String extraNotes) {
         this.nose = nose;
         this.palate = palate;
         this.finish = finish;
@@ -19,4 +19,23 @@ public class TastingNotes {
         this.extraNotes = extraNotes;
     }
 
+    public String getNose() {
+        return nose;
+    }
+
+    public String getPalate() {
+        return palate;
+    }
+
+    public String getFinish() {
+        return finish;
+    }
+
+    public String getExtraNotes() {
+        return extraNotes;
+    }
+
+    public String getDate() {
+        return date;
+    }
 }

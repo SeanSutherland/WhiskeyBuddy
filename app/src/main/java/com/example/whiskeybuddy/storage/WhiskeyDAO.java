@@ -28,5 +28,11 @@ public interface WhiskeyDAO {
     @Query("delete from whiskey")
     void removeAllUsers();
 
+    @Query("delete from whiskey where name = :whiskeyName")
+    public void deleteWhiskey(String whiskeyName);
+
+    @Query("select * from whiskey where wishlist = :yes")
+    public List<Whiskey> getWishlist(boolean yes);
+
 
 }

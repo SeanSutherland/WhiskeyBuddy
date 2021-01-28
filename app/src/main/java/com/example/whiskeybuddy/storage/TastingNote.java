@@ -23,19 +23,37 @@ public class TastingNote {
     long id;
 
     public String whiskey;
-    String notes;
     String nose;
     String palate;
     String finish;
     String date;
+    String extra_notes;
 
-    public TastingNote(String whiskey, String notes, String nose, String palate, String finish, String date) {
+    public TastingNote(String whiskey, String nose, String palate, String finish, String extra_notes, String date) {
         this.whiskey = whiskey;
-        this.notes = notes;
         this.nose = nose;
         this.palate = palate;
         this.finish = finish;
+        this.extra_notes = extra_notes;
         this.date = date;
     }
+
+    public String getNose() {
+        return nose;
+    }
+
+    public String getPalate() {
+        return palate;
+    }
+
+    public String getFinish() {
+        return finish;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public String getExtra() { return extra_notes; }
 
 }

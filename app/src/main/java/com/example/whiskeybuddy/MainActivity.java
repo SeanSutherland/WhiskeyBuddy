@@ -8,10 +8,12 @@ import android.view.Menu;
 
 import com.example.whiskeybuddy.storage.AppDatabase;
 import com.example.whiskeybuddy.storage.Whiskey;
+import com.example.whiskeybuddy.ui.home.ViewWhiskeyFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -78,4 +80,9 @@ public class MainActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+    public void openWhiskey(ViewWhiskeyFragment nextFrag) {
+        this.getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, nextFrag).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).addToBackStack(null).commit();
+    }
+
 }

@@ -6,8 +6,14 @@
 
     <ImageButton
         android:id="@+id/photo"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/generic"
+        android:background="@color/black"
+        android:maxWidth="100dp"
+        android:maxHeight="100dp"
+        android:scaleType="fitCenter"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_margin="25dp"/>
@@ -67,6 +73,16 @@
         app:layout_constraintTop_toBottomOf="@+id/photo"
         android:inputType="number"
         android:layout_margin="25dp"/>
+
+    <CheckBox
+        android:id="@+id/wishlist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/price"
+        app:layout_constraintBottom_toBottomOf="@+id/price"
+        app:layout_constraintLeft_toLeftOf="@+id/type"
+        android:text="Wishlist"
+        android:layout_margin="10dp"/>
 
 
     <TextView
