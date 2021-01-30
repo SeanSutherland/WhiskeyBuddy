@@ -48,6 +48,10 @@ public class TypeFragment extends Fragment {
         return rootView;
     }
 
+    public void openWhiskey(Whiskey whiskey) {
+        ViewWhiskeyFragment nextFrag = new ViewWhiskeyFragment(whiskey);
+        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, nextFrag).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).addToBackStack(null).commit();
+    }
 
     SwipeRefreshLayout refresh;
     private void initialize() {
@@ -60,8 +64,10 @@ public class TypeFragment extends Fragment {
                 //Toast toast = Toast.makeText(getContext(), ((Whiskey)adapterView.getItemAtPosition(i)).getName() + "nice", Toast.LENGTH_SHORT);
                 //toast.show();
 
-                ViewWhiskeyFragment nextFrag = new ViewWhiskeyFragment(((Whiskey)adapterView.getItemAtPosition(i)));
-                ((MainActivity) getActivity()).openWhiskey(nextFrag);
+                /*ViewWhiskeyFragment nextFrag = new ViewWhiskeyFragment(((Whiskey)adapterView.getItemAtPosition(i)));
+                ((MainActivity) getActivity()).openWhiskey(nextFrag);*/
+                openWhiskey((Whiskey)adapterView.getItemAtPosition(i));
+
             }
         });
 

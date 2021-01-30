@@ -1,6 +1,7 @@
 package com.example.whiskeybuddy.ui.home;
 
 import android.content.Context;
+import android.os.Parcelable;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -38,6 +39,16 @@ public class TypeFragmentPagerAdapter extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position) {
         // Generate title based on item position
         return TYPES[position];
+    }
+
+    @Override
+    public Parcelable saveState() {
+        return null;
+    }
+
+    @Override
+    public void restoreState(Parcelable state, ClassLoader loader) {
+        //do nothing
     }
 
 }

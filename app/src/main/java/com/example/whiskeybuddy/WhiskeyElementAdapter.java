@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -30,7 +31,7 @@ import java.util.List;
 public class WhiskeyElementAdapter extends ArrayAdapter<Whiskey> {
     private final Activity context;
     private ArrayList<Whiskey> list;
-    FloatingActionButton delete_button;
+    ImageButton delete_button;
 
     public WhiskeyElementAdapter(@NonNull Activity context, int resource, @NonNull List<Whiskey> objects) {
         super(context, R.layout.whiskey_element, objects);

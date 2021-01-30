@@ -99,19 +99,19 @@ public class ViewWhiskeyFragment extends Fragment {
         });
 
         lView = this.rootView.findViewById(R.id.list);
-        lView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        /*lView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-                ViewWhiskeyFragment nextFrag = new ViewWhiskeyFragment(((Whiskey)adapterView.getItemAtPosition(i)));
+                ViewWhiskeyFragment nextFrag = new ViewWhiskeyFragment(((TastingNote)adapterView.getItemAtPosition(i)));
                 ((MainActivity) getActivity()).openWhiskey(nextFrag);
             }
-        });
+        });*/
 
         lView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-                //delete note
+                view.findViewById(R.id.delete).setVisibility(View.VISIBLE);
                 return false;
             }
         });

@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -25,21 +26,24 @@ import java.util.ArrayList;
 
 public class WishlistFragment extends Fragment {
 
-    private WishlistViewModel wishlistViewModel;
     ListView lView;
     View rootView;
     SwipeRefreshLayout refresh;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        wishlistViewModel =
-                new ViewModelProvider(this).get(WishlistViewModel.class);
         this.rootView = inflater.inflate(R.layout.fragment_wishlist, container, false);
         initialize();
         return rootView;
     }
 
+    public void openWhiskey(Whiskey whiskey) {
+        ViewWhiskeyFragment nextFrag = new ViewWhiskeyFragment(whiskey);
+        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, nextFrag).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).addToBackStack(null).commit();
+    }
+
     private void initialize() {
+
         lView = this.rootView.findViewById(R.id.list);
         lView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -47,9 +51,7 @@ public class WishlistFragment extends Fragment {
 
                 //Toast toast = Toast.makeText(getContext(), ((Whiskey)adapterView.getItemAtPosition(i)).getName() + "nice", Toast.LENGTH_SHORT);
                 //toast.show();
-
-                ViewWhiskeyFragment nextFrag = new ViewWhiskeyFragment(((Whiskey)adapterView.getItemAtPosition(i)));
-                ((MainActivity) getActivity()).openWhiskey(nextFrag);
+                openWhiskey((Whiskey)adapterView.getItemAtPosition(i));
             }
         });
 

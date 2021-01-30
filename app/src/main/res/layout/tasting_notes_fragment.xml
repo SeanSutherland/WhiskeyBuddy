@@ -6,6 +6,18 @@
     android:layout_margin="5dp"
     android:layout_height="wrap_content">
 
+    <ImageButton
+        android:id="@+id/delete"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:gravity="center_horizontal"
+        android:layout_margin="@dimen/fab_margin"
+        android:backgroundTint="#00FFFFFF"
+        android:foreground="@drawable/trash"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"
+        app:layout_constraintRight_toRightOf="parent" />
+
     <TextView
         android:id="@+id/date"
         android:layout_width="wrap_content"
@@ -85,6 +97,7 @@
             android:maxLines="4"/>
 
         <TextView
+            android:id="@+id/extra_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"

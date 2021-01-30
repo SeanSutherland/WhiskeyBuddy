@@ -56,4 +56,7 @@ public class TastingNote {
 
     public String getExtra() { return extra_notes; }
 
+    public long getmyId() {
+        return id;
+    }
 }

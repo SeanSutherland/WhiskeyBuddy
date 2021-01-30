@@ -41,12 +41,14 @@
         app:layout_constraintLeft_toRightOf="@+id/image"
         android:layout_margin="10dp"/>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <ImageButton
         android:id="@+id/delete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:gravity="center_horizontal"
         android:layout_margin="@dimen/fab_margin"
+        android:backgroundTint="#00FFFFFF"
+        android:foreground="@drawable/trash"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:visibility="gone"

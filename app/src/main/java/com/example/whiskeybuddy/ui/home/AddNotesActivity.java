@@ -54,7 +54,7 @@ public class AddNotesActivity extends AppCompatActivity {
 
         Date c = Calendar.getInstance().getTime();
         System.out.println("Current time => " + c);
-        SimpleDateFormat df = new SimpleDateFormat("dd-mm-yyyy");
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
         date = df.format(c);
 
         date_item.setText(date);
@@ -75,7 +75,7 @@ public class AddNotesActivity extends AppCompatActivity {
         String palate = palate_item.getText().toString();
         String finish = finish_item.getText().toString();
 
-        TastingNote tastingNote = new TastingNote(whiskey, notes, nose, palate, finish, date);
+        TastingNote tastingNote = new TastingNote(whiskey, nose, palate, finish, notes, date);
 
         MainActivity.getDatabase().noteDao().addTastingNote(tastingNote);
 
