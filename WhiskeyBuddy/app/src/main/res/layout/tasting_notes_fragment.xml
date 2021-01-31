@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/note_background"
+    android:layout_margin="5dp"
+    android:layout_height="wrap_content">
+
+    <ImageButton
+        android:id="@+id/delete"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:gravity="center_horizontal"
+        android:layout_margin="@dimen/fab_margin"
+        android:backgroundTint="#00FFFFFF"
+        android:foreground="@drawable/trash"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:text="01-27-2021"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/date"
+        android:layout_margin="10dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:textColor="@color/black"
+            android:text="Nose:"/>
+
+        <TextView
+            android:id="@+id/nose"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/nice_background"
+            android:padding="2dp"
+            android:maxLines="4"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:textColor="@color/black"
+            android:text="Palate:"/>
+
+        <TextView
+            android:id="@+id/palate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/nice_background"
+            android:padding="2dp"
+            android:maxLines="4"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:textColor="@color/black"
+            android:text="Finish:"/>
+
+        <TextView
+            android:id="@+id/finish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/nice_background"
+            android:padding="2dp"
+            android:maxLines="4"/>
+
+        <TextView
+            android:id="@+id/extra_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="Extra notes:"/>
+
+        <TextView
+            android:id="@+id/extra_notes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:textColor="@color/black"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/nice_background"
+            android:padding="2dp"
+            android:maxLines="4"/>
+
+
+
+
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
