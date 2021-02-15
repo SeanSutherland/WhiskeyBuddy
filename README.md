@@ -1,6 +1,6 @@
 # WhiskeyBuddy
 
-Android application
+Android application, for saving your whiskey tastings
 
 Download Signed Release 0.5
 
